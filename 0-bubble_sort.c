@@ -1,4 +1,4 @@
-#include <stddef.h>
+#include "sort.h"
 /**
 *swap - exchanges the value at two adresses
 *
@@ -21,7 +21,7 @@ void swap(int *a, int *b)
 */
 void bubble_sort(int *array, size_t size)
 {
-	int i, j;
+	size_t i, j;
 	int swapped;
 
 	if (array == NULL || size < 2)
