@@ -1,20 +1,4 @@
 #include "sort.h"
-
-/**
- * quick_sort - function that sorts an array of integers
- *              in ascending order using the Quick sort algorithm
- * @array: array
- * @size: array's size
- * Return: void
- */
-void quick_sort(int *array, size_t size)
-{
-	if (array == NULL || size < 2)
-		return;
-
-	quick_s(array, 0, size - 1, size);
-}
-
 /**
  * partition - partition
  * @array: array
@@ -51,7 +35,6 @@ int partition(int *array, int lo, int hi, size_t size)
 	}
 	return (i + 1);
 }
-
 /**
  * quick_s - quick sort
  * @array: given array
@@ -70,4 +53,19 @@ void quick_s(int *array, int lo, int hi, size_t size)
 		quick_s(array, lo, pivot - 1, size);
 		quick_s(array, pivot + 1, hi, size);
 	}
+}
+
+/**
+ * quick_sort - function that sorts an array of integers
+ *              in ascending order using the Quick sort algorithm
+ * @array: array
+ * @size: array's size
+ * Return: void
+ */
+void quick_sort(int *array, size_t size)
+{
+	if (array == NULL || size < 2)
+		return;
+
+	quick_s(array, 0, size - 1, size);
 }
